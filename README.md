@@ -1,5 +1,5 @@
 # django-ocr
-Implementing simple OCR on django framework
+Implementing simple OCR on django framework and bootstrap
 
 # Before Run
 ```bash
