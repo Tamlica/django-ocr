@@ -1,0 +1,38 @@
+{% extends "layout/base.html" %}
+
+{% block title %} OCR {% endblock %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">OCR an Image</h4>
+            </div>
+            <div class="card-body">
+                <p style="color: red;">{{message}}</p>
+                <form method="POST" enctype=multipart/form-data> {% csrf_token %} <label> Upload Image:</label>
+                    <input type="file" class="form-control" id="image" name="image" />
+                    <button class="button-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Result</h4>
+            </div>
+            <div class="card-body mb-3">
+                <label>
+                    <h4>OCR-ed Text:</h4>
+                </label>
+                {% comment %} <span class="textarea h3" role="textbox" contenteditable>{{text}}</span> {% endcomment %}
+                <span class="h3">{{text}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
